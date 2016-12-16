@@ -1,0 +1,31 @@
+version: '2'
+
+services:
+  weba:
+    image: bcleonard/node-test
+    expose:
+      - 80
+  
+  webb:
+    image: bcleonard/node-test
+    expose:
+      - 80
+  
+  webc:
+    image: bcleonard/node-test
+    expose:
+      - 80
+  
+  haproxy:
+    image: bcleonard/haproxy-test
+    depends_on:
+     - weba
+     - webb
+     - webc
+    ports:
+     - "80:80"
+     - "70:70"
+  
+    expose:
+     - "80"
+     - "70"

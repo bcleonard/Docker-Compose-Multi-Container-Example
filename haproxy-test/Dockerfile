@@ -8,4 +8,4 @@ ADD src/ /src
 
 EXPOSE 80
 
-#CMD ["haproxy", "-f", "/src/haproxy.spec"]
+CMD ["haproxy", "-f", "/src/haproxy.spec"]
